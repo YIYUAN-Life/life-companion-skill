@@ -1,0 +1,49 @@
+{
+  "session_id": {
+    "type": "string",
+    "required": true
+  },
+  "timestamp": {
+    "type": "string",
+    "format": "iso8601",
+    "required": true
+  },
+  "user_input": {
+    "type": "object",
+    "required": true,
+    "properties": {
+      "text": { "type": "string", "required": true },
+      "emotion_hint": { "type": "string" },
+      "context_scene": { "type": "string" }
+    }
+  },
+  "context": {
+    "type": "object",
+    "properties": {
+      "language": { "type": "string", "default": "zh-CN" },
+      "previous_snippet": { "type": "array", "items": "string" },
+      "risk_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "self_harm",
+            "violence",
+            "medical_urgent",
+            "legal_critical"
+          ]
+        },
+        "default": []
+      }
+    }
+  },
+  "mode": {
+    "type": "string",
+    "enum": [
+      "mirror",
+      "clarify",
+      "return_to_action"
+    ],
+    "required": true
+  }
+}

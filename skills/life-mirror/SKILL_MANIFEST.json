@@ -1,0 +1,45 @@
+{
+  "name": "YIYUAN_LIFE_MIRROR_SKILL_V1",
+  "version": "1.0.0",
+  "title": "Life Mirror Skill",
+  "short_description": "先映照、再澄清、最后回到现实的小步行动能力",
+  "capability": [
+    "mirror_current_state",
+    "clarify_inner_focus",
+    "return_to_life_actioning"
+  ],
+  "permission": {
+    "required": [
+      "read_session_text",
+      "read_context_tags"
+    ],
+    "optional": [
+      "read_history_snippet"
+    ],
+    "forbidden": [
+      "self_harm_treatment",
+      "decision_override",
+      "relationship_control",
+      "memory_persistence"
+    ],
+    "data_scope": "session_only",
+    "retention": "ephemeral"
+  },
+  "boundary": {
+    "hard_no_go": [
+      "medical_diagnosis",
+      "professional_treatment",
+      "coercive_guidance",
+      "decision_substitution",
+      "relationship_replacement"
+    ],
+    "risk_level": "medium",
+    "escalation_triggers": [
+      "self_harm_signal",
+      "interpersonal_violence_risk",
+      "critical_medical_query",
+      "financial_critical_decision"
+    ],
+    "human_readable_notice": "该技能只做映照、澄清与回流，不替代人的关系和决策。"
+  }
+}

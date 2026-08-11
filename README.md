@@ -22,4 +22,18 @@
 - `ERROR_MODEL_V1.md`：缺失、边界与异常行为响应模型。
 - `examples/EXAMPLES.md`：合规示例与反例。
 
+## 模块化索引（执行扩展）
+
+- 已纳入能力：`skills/life-mirror`
+  - `SKILL.md`
+  - `SKILL_MANIFEST.json`
+  - `schemas/INPUT_SCHEMA.json`
+  - `schemas/OUTPUT_SCHEMA.json`
+  - `examples/`
+  - `boundary/README.md`
+
+新增模块说明：
+- `life-mirror` 为 `low_model` 输入下的生命映照入口。
+- 保留现有仓库边界，不引入额外 runtime 与 protocol 依赖。
+
 本仓库不包含运行代码，也不包含 MCP 设计、原型、治理实现。仅发布规范化文档资产。

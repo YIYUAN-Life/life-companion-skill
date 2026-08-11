@@ -1,0 +1,35 @@
+{
+  "session_id": { "type": "string", "required": true },
+  "status": {
+    "type": "string",
+    "required": true,
+    "enum": [
+      "accepted",
+      "needs_clarification",
+      "escalation",
+      "blocked"
+    ]
+  },
+  "summary": { "type": "string", "maxLength": 140 },
+  "mirror": { "type": "string" },
+  "clarifying_questions": { "type": "array", "items": { "type": "string" }, "minItems": 0, "maxItems": 6 },
+  "life_steps": {
+    "type": "array",
+    "minItems": 1,
+    "maxItems": 3,
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timebox": { "type": "string", "enum": ["today", "tomorrow", "within_3_days"] },
+        "action": { "type": "string" },
+        "success_check": { "type": "string" }
+      },
+      "required": ["id", "timebox", "action", "success_check"]
+    }
+  },
+  "boundary_notice": { "type": "string" },
+  "risk_statement": { "type": "string" },
+  "next_check_in": { "type": "string" },
+  "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+}
